@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div>left</div>
+            <div>right</div>
+        </nav>
+    </header>
+    <main>
+        <section class="container mx-auto">
+            <h1>All recipes</h1>
+            <!-- Search Bar  -->
+             <form>
+                <input class="search-bar" type="search" placeholder="Search" value="" name="keyWord" size="50">
+                <select name="filter1" id="filter1">
+                    <option value="name-asc" selected>Sort By name asc</option>
+                    <option value="name-desc">Sort By name desc</option>
+                    <option value="id-asc">Sort By date asc</option>
+                    <option value="id-desc">Sort By date desc</option>
+                </select>
+                <select name="filter2" id="filter2">
+                    <option value="3">display 3</option>
+                    <option value="6">display 6</option>
+                    <option value="12" selected>display 12</option>
+                    <option value="24">display 24</option>
+                    <option value="30">display 36</option>
+                </select>
+             </form>
+        </section>
+        <div class="container mx-auto recipes">
+            <!-- Mobile 1 col -->
+             <!-- Tablets 2 col -->
+            <!-- Desktop 4 col -->
+        </div>
+    </main>
+    <footer>
+        <nav>
+            <div>left</div>
+            <div>right</div>
+        </nav>
+    </footer>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>

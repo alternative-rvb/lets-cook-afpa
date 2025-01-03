@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>left</div>
+        <div>right</div>
+      </nav>
+    </header>
+    <main>
+      <div class="container mx-auto">
+        <h1></h1>
+      </div>
+      <div class="container mx-auto recipe"></div>
+    </main>
+    <footer>
+      <nav>
+        <div>left</div>
+        <div>right</div>
+      </nav>
+    </footer>
+  </body>
+  <script>
+    // recupér la query de l'url
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    const name = urlParams.get("name");
+    console.log("id:", id);
+    console.log("name:", name);
+    const container = document.querySelector(".recipe");
+    const h1 = document.querySelector("h1");
+    h1.innerHTML = `${name} - ${id}`;
+    fetch(`https://dummyjson.com/recipes/${id}`)
+      .then((raw) => raw.json())
+      .then((data) => {
+        console.log(data);
+        container.innerHTML = `
+            <img class="recipe__image" src="${data.image}" alt="${data.title}" width="300">
+            <h2 class="recipe__title">${data.name} - ${data.id}</h2>
+            <h3>Ingredients</h3>
+            <p class="recipe__ingredients">${data.ingredients}</p>
+            <h3>Instructions</h3>
+            <p class="recipe__instructions">${data.instructions}</p> 
+            <p><a href="index.html">Retour</a></p>
+        `;
+      });
+  </script>
+</html>
