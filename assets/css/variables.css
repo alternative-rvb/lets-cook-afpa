@@ -1,5 +1,8 @@
 :root {
-    --theme1: #333;
-    --theme2: #666;
+    --theme1: #222;
+    --theme2: #333;
+    --theme3: #f00;
+    --dark: #000000;
+    --light: #ffffff;
     
 }

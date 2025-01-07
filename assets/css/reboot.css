@@ -1,7 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    border: 1px dashed white;
-    background-color: rgba(0,0,0,0.1);
+    margin: 0;
+    padding: 0;
 }
 
 body {

@@ -22,8 +22,28 @@
     display: flex;
 }
 
+.fw-wrap {
+    flex-wrap: wrap;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-between {
+    justify-content: space-between;
+}
+
+.ai-center {
+    align-items: center;
+}
+
 .gap-1 {
     gap: 10px;
+}
+
+.gap-2 {
+    gap: 20px;
 }
 
 /* SIZING */
@@ -45,9 +65,11 @@
 
 .px-1 {
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .px-2 {
+    padding-left: 20px;
     padding-right: 20px;
 }
 

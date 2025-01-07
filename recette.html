@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -9,47 +8,69 @@
   </head>
   <body>
     <header>
-      <nav>
-        <div>left</div>
-        <div>right</div>
+      <nav class="container mx-auto flex gap-1 ai-center px-1">
+        <div>
+          <img src="assets/images/logo.svg" alt="logo" width="30" />
+        </div>
+        <div class="flex fw-wrap ai-center gap-1">
+          <a href="index.html">Home</a>
+          <a href="#">Tendance</a>
+          <a href="#">Contact</a>
+        </div>
       </nav>
     </header>
     <main>
-      <div class="container mx-auto">
+      <div class="container mx-auto py-1 px-1">
         <h1></h1>
       </div>
-      <div class="container mx-auto recipe"></div>
+      <div class="container mx-auto recipe py-1 px-1"></div>
     </main>
     <footer>
-      <nav>
-        <div>left</div>
-        <div>right</div>
-      </nav>
+      <div class="container mx-auto flex fw-wrap gap-1 jc-between ai-center px-1">
+        <div>
+          <nav class="container mx-auto flex gap-1 ai-center">
+            <div>
+              <img src="assets/images/logo.svg" alt="logo" width="30" />
+            </div>
+            <div class="flex fw-wrap ai-center gap-1">
+              <a href="index.html">Home</a>
+              <a href="#">Tendance</a>
+              <a href="#">Contact</a>
+            </div>
+          </nav>
+        </div>
+        <div>
+          <p>&copy; 2025 All rights reserved</p>
+        </div>
+      </div>
     </footer>
-  </body>
-  <script>
-    // recupér la query de l'url
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
-    const name = urlParams.get("name");
-    console.log("id:", id);
-    console.log("name:", name);
-    const container = document.querySelector(".recipe");
-    const h1 = document.querySelector("h1");
-    h1.innerHTML = `${name} - ${id}`;
-    fetch(`https://dummyjson.com/recipes/${id}`)
-      .then((raw) => raw.json())
-      .then((data) => {
-        console.log(data);
-        container.innerHTML = `
-            <img class="recipe__image" src="${data.image}" alt="${data.title}" width="300">
+    <script src="assets/js/oop/index.js" type="module"></script>
+    <script>
+      // recupér la query de l'url
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      const name = urlParams.get("name");
+      console.log("id:", id);
+      console.log("name:", name);
+      const container = document.querySelector(".recipe");
+      const h1 = document.querySelector("h1");
+      h1.innerHTML = `${name} - ${id}`;
+      fetch(`https://dummyjson.com/recipes/${id}`)
+        .then((raw) => raw.json())
+        .then((data) => {
+          console.log(data);
+          container.innerHTML = `
+            <div>
+              <img class="recipe__image" src="${data.image}" alt="${data.title}" width="300">
+            </div>
             <h2 class="recipe__title">${data.name} - ${data.id}</h2>
-            <h3>Ingredients</h3>
+            <h3 class="recipe__subtitle">Ingredients</h3>
             <p class="recipe__ingredients">${data.ingredients}</p>
-            <h3>Instructions</h3>
+            <h3 class="recipe__subtitle">Instructions</h3>
             <p class="recipe__instructions">${data.instructions}</p> 
-            <p><a href="index.html">Retour</a></p>
+            <p class="recipe__links"><a href="index.html">← Retour</a></p>
         `;
-      });
-  </script>
+        });
+    </script>
+  </body>
 </html>
